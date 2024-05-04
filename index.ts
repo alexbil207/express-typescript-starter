@@ -21,7 +21,11 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 app.use(express.json())
-app.use('/', exampleRouter)
+app.use('/example', exampleRouter)
+
+app.get('/', (request: Request, response: Response) => {
+    response.status(200).send(`localhost:${PORT}/example`)
+})
 
 app.listen(PORT, () => {
     console.log('Server running at PORT: ', PORT)
