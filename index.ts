@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import { config } from './config'
+import { exampleRouter } from './api/example/example.routes'
 
 const path = config.isProduction() ? '.env.production' : '.env.dev'
 
@@ -19,10 +20,8 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions))
-
-app.get('/', (request: Request, response: Response) => {
-    response.status(200).send('Hello World')
-})
+app.use(express.json())
+app.use('/', exampleRouter)
 
 app.listen(PORT, () => {
     console.log('Server running at PORT: ', PORT)
