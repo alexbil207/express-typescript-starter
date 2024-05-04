@@ -4,22 +4,27 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "set NODE_ENV=production && npx tsc && node dist/index.js",
         "dev": "set NODE_ENV=dev && nodemon index.ts",
-        "build": "set NODE_ENV=production && npx tsc"
+        "build": "set NODE_ENV=production && webpack"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@types/node": "^20.12.8",
         "cors": "^2.8.5",
         "dotenv": "^16.4.5",
-        "express": "^4.19.2"
+        "express": "^4.19.2",
+        "ts-loader": "^9.5.1"
     },
     "devDependencies": {
         "@types/cors": "^2.8.17",
         "@types/dotenv": "^8.2.0",
+        "@types/dotenv-webpack": "^7.0.7",
         "@types/express": "^4.17.21",
-        "typescript": "^5.4.5"
+        "dotenv-webpack": "^8.1.0",
+        "ts-node": "^10.9.2",
+        "webpack": "^5.91.0",
+        "webpack-cli": "^5.1.4"
     }
 }
