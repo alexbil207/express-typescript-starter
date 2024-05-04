@@ -4,10 +4,10 @@ import Dotenv from 'dotenv-webpack'
 const config = {
     mode: 'production',
     target: 'node',
-    entry: './dist/index.js',
+    entry: './index.ts',
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'index.ts',
+        filename: 'index.js',
     },
     module: {
         rules: [
