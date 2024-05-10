@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 import { config } from './config'
 import { exampleRouter } from './api/example/example.routes'
 
-const path = config.isProduction() ? '.env.production' : '.env.dev'
+const path = config.isProduction() ? '.env.prod' : '.env.dev'
 
 dotenv.config({
     path: [path],
@@ -13,7 +13,6 @@ dotenv.config({
 const app = express()
 const PORT = process.env.PORT
 const corsOrigins = process.env.CORS
-
 const corsOptions = {
     origin: corsOrigins,
     credentials: true,

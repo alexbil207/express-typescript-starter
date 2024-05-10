@@ -1,5 +1,6 @@
 import path from 'path'
 import Dotenv from 'dotenv-webpack'
+const webpack = require('webpack')
 
 const config = {
     mode: 'production',
@@ -24,6 +25,9 @@ const config = {
     plugins: [
         new Dotenv({
             path: './.env.prod',
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production'),
         }),
     ],
 }
